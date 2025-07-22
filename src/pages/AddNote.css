@@ -1,0 +1,68 @@
+.AddNote-cont{
+    padding: 40px 0px;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.AddNote-main{
+    width: 50%;
+    height: 500px;
+    border-radius: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.AddNote-title{
+
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    align-items: center;
+}
+.AddNote-title input{
+    width: 70%;
+    border: 2px solid grey;
+    font-size: 1.7rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: rgb(33, 31, 31);
+}
+.AddNote-body{
+
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    align-items: flex-start;
+}
+.AddNote-body input{
+    width: 87%;
+    border: 2px solid grey;
+    font-size: 1.3rem;
+    height: 200px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: rgb(33, 31, 31);
+}
+
+
+
+.AddNote-btns{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

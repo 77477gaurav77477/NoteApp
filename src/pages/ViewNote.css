@@ -1,0 +1,51 @@
+.ViewNote-cont{
+    padding: 40px 0px;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ViewNote-main{
+
+    width: 50%;
+    height: 500px;
+    border-radius: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.ViewNote-content h1{
+    font-size: 3rem ;
+    text-align: center;
+}
+.ViewNote-content p{
+    font-size: 1.1rem ;
+    text-align: justify;
+}
+.ViewNote-btn-cont{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.red-btn{
+    width: 20%;;
+    padding: 8px 16px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius:16px ;
+    background-color: rgb(220, 38, 38);
+    border: 2px solid rgb(220, 38, 38);
+    color:white;
+}
+.red-btn:hover{
+    background-color: rgb(221, 0, 0);
+    font-size: 1.3rem;
+    border: 2px solid aliceblue;
+}

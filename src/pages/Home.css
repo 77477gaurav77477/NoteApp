@@ -1,0 +1,102 @@
+.Home-cont{
+    padding: 40px 0px;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Home-main{
+
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+.slider{
+    width: 90%;
+    height: 90%;
+    border-radius: 40px;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto;
+}
+.slider::-webkit-scrollbar{
+    width: 0;
+}
+.card{
+    height: 80%;
+    width: 300px;
+    padding: 20px;
+    border: 2px solid blue;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.card h2{
+    text-align: center;
+    font-size: 2rem;
+}
+.card p{
+    text-align: justify;
+}
+.card-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+.yellow-btn{
+    width: 40%;;
+    padding: 8px 16px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius:16px ;
+    background-color: rgb(216, 223, 124);
+    border: 2px solid rgb(216, 223, 124);
+    color: black;
+}
+.yellow-btn:hover{
+    background-color: rgb(225, 236, 77);
+    font-size: 1.3rem;
+    border: 2px solid aliceblue;
+}
+.green-btn{
+    width: 20%;;
+    padding: 8px 16px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius:16px ;
+    background-color: rgb(38, 220, 71);
+    border: 2px solid rgb(38, 220, 71);
+    color:white;
+}
+.green-btn:hover{
+    background-color: rgb(5, 219, 44);
+    font-size: 1.3rem;
+    border: 2px solid aliceblue;
+}

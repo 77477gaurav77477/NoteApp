@@ -1,0 +1,73 @@
+.Header-cont{
+    width: 100%;
+
+    position: fixed;
+}
+.Header-cont nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    align-items: center;
+}
+.logo img{
+  width: 50px;
+  cursor: pointer;
+}
+.Header-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap:20px;
+}
+.logutbtn{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding:5px 10px 5px 8px;
+    gap: 10px;
+    border-radius: 16px;
+    background-color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+.logutbtn img{
+    width: 25px;
+}
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 16px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkbox-label IMG{
+  width: 19px;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(34px);
+}
+
