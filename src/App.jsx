@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import AddNote from "./pages/AddNote";
 import ViewNote from "./pages/ViewNote";
 import NotFound from "./pages/NotFound";
+import EditNote from "./pages/EditNote";
 
 function App() {
   const [isLogged, setIsLogged] = useState(true);
@@ -28,6 +29,10 @@ function App() {
       <Route
         path="/ViewNote"
         element={isLogged ? <ViewNote /> : <Navigate to="/login" />}
+      />
+      <Route
+        path="/EditNote"
+        element={isLogged ? <EditNote /> : <Navigate to="/login" />}
       />
       <Route path="*" element={<NotFound />} />
     </Routes>

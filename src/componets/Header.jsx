@@ -5,14 +5,16 @@ import "./Header.css";
 import sun from "../assets/Images/Sun.png";
 import moon from "../assets/Images/Moon.png";
 import { useTheme } from "../context/ThemeContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const { theme, toggleTheme } = useTheme();
   return (
     <div className="Header-cont">
       <nav>
         <div className="logo">
-          <img src={tempLogo} alt="Note App" />
+          <img src={tempLogo} alt="Note App" onClick={() => navigate("/")} />
         </div>
 
         <div className="Header-btns">
@@ -29,7 +31,7 @@ const Header = () => {
               <span class="ball"></span>
             </label>
           </div>
-          <button className="logutbtn">
+          <button className="logutbtn" onClick={() => navigate("/login")}>
             <img src={logoutBtn} alt="O" /> Logout
           </button>
         </div>

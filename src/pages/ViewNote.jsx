@@ -1,8 +1,10 @@
 import React from "react";
 import Header from "../componets/Header";
 import "./ViewNote.css";
+import { useNavigate } from "react-router-dom";
 
 const ViewNote = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Header />
@@ -18,7 +20,12 @@ const ViewNote = () => {
             </p>
           </div>
           <div className="ViewNote-btn-cont">
-            <button className="yellow-btn">Edit</button>
+            <button
+              className="yellow-btn"
+              onClick={() => navigate("/EditNote")}
+            >
+              Edit
+            </button>
             <button className="red-btn">Delete</button>
           </div>
         </div>

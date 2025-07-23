@@ -1,8 +1,10 @@
 import React from "react";
 import Header from "../componets/Header";
 import "./Home.css";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Header />
@@ -19,12 +21,24 @@ const Home = () => {
                 </p>
               </div>
               <div className="card-btn">
-                <button className="login-btn">View</button>
-                <button className="yellow-btn">Edit</button>
+                <button
+                  className="login-btn"
+                  onClick={() => navigate("/ViewNote")}
+                >
+                  View
+                </button>
+                <button
+                  className="yellow-btn"
+                  onClick={() => navigate("/EditNote")}
+                >
+                  Edit
+                </button>
               </div>
             </div>
           </div>
-          <button className="green-btn">Add Note</button>
+          <button className="green-btn" onClick={() => navigate("/AddNote")}>
+            Add Note
+          </button>
         </div>
       </div>
     </div>
