@@ -21,14 +21,14 @@ const Header = () => {
           <div>
             <input
               type="checkbox"
-              class="checkbox"
+              className="checkbox"
               id="checkbox"
               onChange={toggleTheme}
             />
-            <label for="checkbox" class="checkbox-label">
+            <label htmlFor="checkbox" className="checkbox-label">
               <img src={sun} alt="" />
               <img src={moon} alt="" />
-              <span class="ball"></span>
+              <span className="ball"></span>
             </label>
           </div>
           <button className="logutbtn" onClick={() => navigate("/login")}>

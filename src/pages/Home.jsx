@@ -1,40 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../componets/Header";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
+import { getNotes } from "../Api";
 
 const Home = () => {
+  const [notes, setNotes] = useState([]);
+  useEffect(() => {
+    const fetchNotes = async () => {
+      const fetchNotes = await getNotes();
+      setNotes(fetchNotes.record);
+    };
+    fetchNotes();
+  }, []);
   const navigate = useNavigate();
   return (
     <div>
       <Header />
+      {console.log("Fetching notes:", notes)}
+      {console.log("Rendered Home Component")}
+      {console.log(typeof notes)}
       <div className="Home-cont">
         <div className="Home-main">
           <div className="slider">
-            <div className="card">
-              <div className="card-content">
-                <h2>Tiitle</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Repellendus corrupti dolores itaque illum eius labore,
-                  consequatur sint iste quasi sit dolore fugit similique qui.
-                </p>
-              </div>
-              <div className="card-btn">
-                <button
-                  className="login-btn"
-                  onClick={() => navigate("/ViewNote")}
-                >
-                  View
-                </button>
-                <button
-                  className="yellow-btn"
-                  onClick={() => navigate("/EditNote")}
-                >
-                  Edit
-                </button>
-              </div>
-            </div>
+            {notes &&
+              notes.map((note) => (
+                <div className="card" key={note.id}>
+                  <div className="card-content">
+                    <h2>{note.title}</h2>
+                    <p>{note.body}</p>
+                  </div>
+                  <div className="card-btn">
+                    <button
+                      className="login-btn"
+                      onClick={() => navigate(`/ViewNote/${note.id}`)}
+                    >
+                      View
+                    </button>
+                    <button
+                      className="yellow-btn"
+                      onClick={() => navigate(`/EditNote/${note.id}`)}
+                    >
+                      Edit
+                    </button>
+                  </div>
+                </div>
+              ))}
           </div>
           <button className="green-btn" onClick={() => navigate("/AddNote")}>
             Add Note
