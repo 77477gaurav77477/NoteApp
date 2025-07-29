@@ -10,8 +10,6 @@ import EditNote from "./pages/EditNote";
 
 function App() {
   const [isLogged, setIsLogged] = useState(true);
-  let id;
-
   return (
     <Routes>
       <Route path="/login" element={<Login />} />

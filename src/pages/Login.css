@@ -51,18 +51,24 @@
     flex-direction: column;
     justify-content: space-evenly;
 }
-.login-form form div{
+.login-form .login-form-2 div{
     width: 100%;
-
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    height: 50%;
+    height: 80%;
 }
-.login-form form div label {
+.login-form-2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.login-form-1 label {
     font-size: 1.5rem;
 }
-.login-form form div input {
+.login-form-1 input {
     padding: 8px ;
     font-size: 1.2rem;
     border-radius: 8px;
