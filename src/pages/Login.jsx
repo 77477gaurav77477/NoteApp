@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/Auth";
 
 const Login = () => {
+  const { logIn } = useAuth();
   const navigate = useNavigate();
   const admin = "admin";
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const handleusername = (e) => {
     setUsername(e.target.value);
-    console.log("Username:", e.target.value);
   };
   const handlepassword = (e) => {
     setPassword(e.target.value);
-    console.log("Password:", e.target.value);
   };
   const handlesubmit = (e) => {
     e.preventDefault();
-    if (username === admin && password === admin) {
-      alert("Login successful!");
-      navigate("/Home");
+    if (username === admin && password === "admin") {
+      logIn();
+      navigate("/");
     } else {
       alert("Invalid username or password.");
     }
@@ -28,7 +28,7 @@ const Login = () => {
   };
   return (
     <div className="login-page">
-      <form form action="" onSubmit={handlesubmit} className="Login-main-div">
+      <form onSubmit={handlesubmit} className="Login-main-div">
         <h1 className="Login-page-title"> Note Login</h1>
         <div className="login-form">
           <div className="login-form-2">

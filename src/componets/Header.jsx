@@ -6,9 +6,15 @@ import sun from "../assets/Images/Sun.png";
 import moon from "../assets/Images/Moon.png";
 import { useTheme } from "../context/ThemeContext";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/Auth";
 
 const Header = () => {
   const navigate = useNavigate();
+  const { logOut } = useAuth();
+  const handleLogOut = () => {
+    logOut();
+    navigate("/");
+  };
   const { theme, toggleTheme } = useTheme();
   return (
     <div className="Header-cont">
@@ -31,7 +37,7 @@ const Header = () => {
               <span className="ball"></span>
             </label>
           </div>
-          <button className="logutbtn" onClick={() => navigate("/login")}>
+          <button className="logutbtn" onClick={handleLogOut}>
             <img src={logoutBtn} alt="O" /> Logout
           </button>
         </div>

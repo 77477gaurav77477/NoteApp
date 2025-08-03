@@ -39,11 +39,10 @@ export const addNote = async (newNote) => {
 
 export const editNote = async (newNote, id) => {
   const notes = await getNotes();
-  console.log(newNote);
   const updatedNotes = notes.record.map((note) =>
     note.id === id ? newNote : note
   );
-  console.log(updatedNotes);
+
   const response = await axios.put(
     API_URL,
     { record: updatedNotes },
@@ -71,9 +70,7 @@ export const deleteNote = async (noteId) => {
 };
 export const getNote = async (id) => {
   const notes = await getNotes();
-  console.log(id);
   const note = notes.record.filter((note) => note.id === id)[0];
-  console.log(note);
   if (!note) {
     throw new Error(`Note with id ${id} not found`);
   }

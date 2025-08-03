@@ -17,9 +17,6 @@ const Home = () => {
   return (
     <div>
       <Header />
-      {console.log("Fetching notes:", notes)}
-      {console.log("Rendered Home Component")}
-      {console.log(typeof notes)}
       <div className="Home-cont">
         <div className="Home-main">
           <div className="slider">

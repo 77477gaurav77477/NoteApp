@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 import Header from "../componets/Header";
 import { getNote, editNote } from "../Api";
 import { useParams } from "react-router-dom";
@@ -14,17 +14,26 @@ const EditNote = () => {
     setBody(e.target.value);
   };
 
+  const [initial_title, setInitialTitle] = useState("");
+  const [initial_body, setInitialBody] = useState("");
+
   useEffect(() => {
     if (id) {
       const fetchNote = async () => {
         const response = await getNote(id);
         setTitle(response.title);
+        setInitialTitle(response.title);
         setBody(response.body);
+        setInitialBody(response.body);
       };
       fetchNote();
     } else console.log(`Id ${id} not found`);
   }, []);
 
+  const handleReset = () => {
+    setTitle(initial_title);
+    setBody(initial_body);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     const note = { id, title, body };
@@ -60,7 +69,7 @@ const EditNote = () => {
             <button type="submit" className="green-btn">
               Save
             </button>
-            <button type="reset" className="red-btn">
+            <button type="reset" className="red-btn" onClick={handleReset}>
               Cancel
             </button>
           </div>

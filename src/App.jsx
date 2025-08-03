@@ -7,31 +7,32 @@ import AddNote from "./pages/AddNote";
 import ViewNote from "./pages/ViewNote";
 import NotFound from "./pages/NotFound";
 import EditNote from "./pages/EditNote";
+import { useAuth } from "./context/Auth";
 
 function App() {
-  const [isLogged, setIsLogged] = useState(true);
+  const { isLoggedin } = useAuth();
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route
         path="/"
-        element={isLogged ? <Home /> : <Navigate to="/login" />}
+        element={isLoggedin ? <Home /> : <Navigate to="/login" />}
       />
       <Route
         path="/Home"
-        element={isLogged ? <Home /> : <Navigate to="/login" />}
+        element={isLoggedin ? <Home /> : <Navigate to="/login" />}
       />
       <Route
         path="/AddNote"
-        element={isLogged ? <AddNote /> : <Navigate to="/login" />}
+        element={isLoggedin ? <AddNote /> : <Navigate to="/login" />}
       />
       <Route
         path="/ViewNote/:id"
-        element={isLogged ? <ViewNote /> : <Navigate to="/login" />}
+        element={isLoggedin ? <ViewNote /> : <Navigate to="/login" />}
       />
       <Route
         path="/EditNote/:id"
-        element={isLogged ? <EditNote /> : <Navigate to="/login" />}
+        element={isLoggedin ? <EditNote /> : <Navigate to="/login" />}
       />
       <Route path="*" element={<NotFound />} />
     </Routes>
