@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const API_KEY = "$2a$10$zyRVp2KWJuHoUolReypz7.mT0SWRpHWwpo6QeWK903O3EplPj1wXC";
-const BIN_ID = "6882ebf9ae596e708fbb58e3";
 const ACCSESS_KEY =
   "$2a$10$VZZXIGl3POw/RxTF0oeF3uMxCPkcl74Kz8C2bRKFX.cPhkux.LF5m";
 const API_URL = "https://api.jsonbin.io/v3/b/6882ebf9ae596e708fbb58e3";

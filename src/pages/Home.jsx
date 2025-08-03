@@ -15,7 +15,7 @@ const Home = () => {
   }, []);
   const navigate = useNavigate();
   return (
-    <div>
+    <div >
       <Header />
       <div className="Home-cont">
         <div className="Home-main">

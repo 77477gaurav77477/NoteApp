@@ -1,17 +1,16 @@
 .Home-cont{
-    padding: 40px 0px;
     width: 100%;
     min-height: 100vh;
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .Home-main{
-
     height: 500px;
     width: 100%;
     display: flex;
@@ -36,7 +35,7 @@
 }
 .card{
     height: 80%;
-    width: 300px;
+    min-width: 200px;
     padding: 20px;
     border-radius: 15px;
     display: flex;

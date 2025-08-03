@@ -1,12 +1,13 @@
 import React, { useState, useEffect, use } from "react";
 import Header from "../componets/Header";
 import { getNote, editNote } from "../Api";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const EditNote = () => {
   const { id } = useParams();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  const navigate = useNavigate();
   const handletitle = (e) => {
     setTitle(e.target.value);
   };
@@ -38,6 +39,7 @@ const EditNote = () => {
     e.preventDefault();
     const note = { id, title, body };
     editNote(note, id);
+    navigate("/");
   };
 
   return (
@@ -57,8 +59,7 @@ const EditNote = () => {
           </div>
           <div className="AddNote-body">
             <label htmlFor="Body">Body :</label>
-            <input
-              type="text"
+            <textarea
               name="Body"
               id="Body"
               value={body}

@@ -48,7 +48,7 @@ body {
   .AddNote-main{
     color: var(--text-color);
   }
-    .AddNote-main input{
+    .AddNote-main input,textarea{
       background-color: var(--card-bg);
       color: var(--text-color);
     }

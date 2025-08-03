@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Header from "../componets/Header";
 import "./AddNote.css";
 import { addNote } from "../Api";
+import { useNavigate } from "react-router-dom";
 
 const AddNote = () => {
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const handleTitle = (e) => {
@@ -21,6 +23,7 @@ const AddNote = () => {
       setTitle("");
       setBody("");
       alert("Note added successfully!");
+      navigate("/");
     } else {
       alert("Please fill in all fields.");
     }
@@ -35,6 +38,7 @@ const AddNote = () => {
             <input
               type="text"
               value={title}
+              placeholder="Enter the Title"
               name="Title"
               id="Title"
               onChange={handleTitle}
@@ -42,11 +46,14 @@ const AddNote = () => {
           </div>
           <div className="AddNote-body">
             <label htmlFor="Body">Body :</label>
-            <input
+            <textarea
               type="text"
               value={body}
               name="Body"
+              column={43}
+              row={20}
               id="Body"
+              placeholder="Enter the Body"
               onChange={handleBody}
             />
           </div>

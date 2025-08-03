@@ -1,5 +1,5 @@
 .AddNote-cont{
-    padding: 40px 0px;
+
     width: 100%;
     min-height: 100vh;
     height: 100%;
@@ -13,7 +13,7 @@
     width: 50%;
     height: 500px;
     border-radius: 40px;
-    padding: 20px;
+    padding: 40px 20px 20px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -58,7 +58,15 @@
     color: rgb(33, 31, 31);
 }
 
-
+.AddNote-body textarea{
+    width: 87%;
+    border: 2px solid grey;
+    font-size: 1.3rem;
+    height: 200px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: rgb(33, 31, 31);
+}
 
 .AddNote-btns{
     width: 100%;
